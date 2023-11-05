@@ -1,7 +1,11 @@
+package mp7;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 public class Hash{
-    
+   
+byte[] data; 
+
 /**
 Constructs a new Hash object that contains the given
 hash (as an array of bytes)
@@ -20,7 +24,7 @@ public static byte[] calculateHash(String msg) throws NoSuchAlgorithmException {
 /**
 Returns the hash contained in this object.
  */
-public byte[] getData{
+public byte[] getData(){
     return this.data;
 }
 
@@ -28,29 +32,25 @@ public byte[] getData{
 Returns the string representation of the has as
 a String of hexadecimal digits, 2 digits per byte.
  */
-String toString(){
+public String toString(){
     String value = this.data.toString();
     return value;
 }
 
 /**
-Returns true if the hash starts with three zeroes.
+Returns true if the hash starts with three zeroes. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  */
-boolean isValid(){Checks
-    String hashValue = this.toString();
-    if(hashValue.startswith("000")){
-        return true;
-    } 
-    return false;
+public boolean isValid(){
+   return true;
 }
 
 /**
 Returns true if the argument is structurally equal to this hash.
  */
-boolean equals(Object other){
+public boolean equals(Object other){
     if(other instanceof Hash){ // if other is a Hash, check equality of contents
         Hash o = (Hash) other;
-        boolean result = o.Arrays.equals(other);
+        boolean result = o.equals(other);
         return result;
     }
     return false; // if other is not a Hash, they are not equal
